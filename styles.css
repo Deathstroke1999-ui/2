@@ -22,14 +22,11 @@ html { font-size: 62.5%;
 section{
     background-image:linear-gradient(90deg, rgba(2,0,36,.8) 0%, rgba(0,0,0,0.40129555240064774) 200%), url(toronto-1298016_1920.jpg);
     height: 100vh;
-    clip-path: polygon(100% 0, 100% 74%, 50% 100%, 0 74%, 0 0);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
     background-position: center;
 }
-@media (max-width: 575.98px) { section{
-
-    clip-path: polygon(100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
-} }
 
 .titulo-banner{
     color: #D7434F;
@@ -75,6 +72,13 @@ section{
         padding: 20px;
         animation: moveleft 2s ease-out;
     }
+    @media (max-width: 575.98px) { .p{
+    
+      font-size: 2.1rem;
+
+
+  } }
+
     @keyframes moveleft{
       0%{
           opacity: 0;
@@ -90,13 +94,31 @@ section{
     }
     }
     
-    @media (max-width: 575.98px) { section{
-        height: auto;
-    } }
-    @media (max-width: 650px) { section{
-        height: auto;
-    } }
+    @media (max-width: 769px) { section{
+  height: auto !important;
+       
+    } 
+    .section-principal{
+      height: auto !important;
 
+    }
+  .section-principal:nth-child(2){
+   margin-top: 4rem;
+  }
+  
+  }
+.span{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 3rem;
+  color: #F1BCD6;
+  padding: 10px;
+}
+@media (max-width: 575.98px) {
+  .span{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
+  }
+} 
 
 
     .btn-dark, .btn-dark:hover, .btn-dark:active, .btn-dark:visited {
@@ -244,12 +266,14 @@ opacity: 8;
 
     } 
 }
+.section-principal{
+  height: 100vh;
+}
 .centrado-img{
-    display: flex;
-  justify-content: center;
-  align-items: center; height: 100vh;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  align-items: center;
+
+  height: 100%;
 }
 .poppins1{
 font-size: 2.5rem;
@@ -379,7 +403,7 @@ article{
   height: auto;
 }
 
-.overlay1{
+.overlay{
     position: absolute;
     top: 0;
     bottom: 0;
@@ -390,6 +414,11 @@ article{
     opacity: 0;
     transition: .5s ease;
     background-color: #111111;;
+}
+.gallery-item:hover .overlay {
+  opacity: .7;
+
+
 }
 .overlay2{
     position: absolute;
@@ -403,11 +432,7 @@ article{
     transition: .5s ease;
     background-color: #111111;;
 }
-.box:hover .overlay {
-    opacity: .7;
 
-
-  }
   .box2:hover .overlay2 {
     opacity: .7;
 
@@ -431,7 +456,10 @@ article{
       transition: 0.5s ease-in-out;
   }
   .bg-dark.scrolled{
-      background: #322C7C !important;
+      background: #D8434F !important;
+  }
+  .span1.scrolled{
+    color: white;
   }
   .custom-toggler.navbar-toggler {
     border-color: rgb(255,102,203);
@@ -590,3 +618,83 @@ form .user-details .input-box{
         margin-top: 0;
     }
 } 
+.gallery-container{
+ 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows:100px;
+padding: 10px;
+
+
+  grid-gap: 10px;
+}
+.gallery-img{
+ width: 100%;
+  height: 100%;
+  object-fit:cover ;
+  
+}
+.gallery-item:nth-child(1){
+  grid-column-start: span 2;
+  grid-row-start: span 3;
+  position: relative;
+  }
+  .gallery-item:nth-child(2){
+    grid-row-start: span 3;
+    grid-column-start: span 1;
+    position: relative;
+    }
+    .gallery-item:nth-child(3){
+      position: relative;
+      grid-row-start: span 3;
+      }
+.gallery-item:nth-child(4){
+grid-column-start: span 1;
+grid-row-start: span 3;
+position: relative;
+}
+.gallery-item:nth-child(5){
+  position: relative;
+  grid-row-start: span 3;
+  }
+
+  @media (max-width: 750px) {
+    .gallery-item:nth-child(1){
+      grid-column-start: span 3;
+      grid-row-start: span 2;
+      }
+      .gallery-item:nth-child(2){
+        grid-column-start: span 3;
+        grid-row-start: span 2;
+        }
+        .gallery-item:nth-child(3){
+          grid-column-start: span 3;
+          grid-row-start: span 2;
+          }
+    .gallery-item:nth-child(4){
+      grid-column-start: span 3;
+      grid-row-start: span 2;
+    }
+    .gallery-item:nth-child(5){
+      grid-column-start: span 3;
+      grid-row-start: span 2;
+      }
+} 
+
+
+.color-gallery{
+height: 120vh;
+  background-image:linear-gradient(90deg, rgba(2,0,36,.8) 0%, rgba(0,0,0,0.40129555240064774) 200%), url(wooden-table-looking-out-to-defocussed-room-interior\ \(1\).jpg);
+ 
+  padding-top: 10rem;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+  background-position: bottom;
+}
+@media (max-width: 750px) {
+.color-gallery{
+  height: auto;
+}
+}
